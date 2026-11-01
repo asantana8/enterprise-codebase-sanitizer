@@ -96,6 +96,8 @@ def read_text(path, root, max_bytes):
 def build_context(root, output, max_file_bytes=256_000, max_context_bytes=2_000_000):
     root = Path(root).resolve()
     output = Path(output).absolute()
+    if output.is_symlink():
+        raise ValueError("A saída não pode ser um link simbólico.")
     if not root.is_dir():
         raise ValueError("O repositório deve ser um diretório existente.")
     if max_file_bytes <= 0 or max_context_bytes <= 0:
@@ -120,6 +122,9 @@ def build_context(root, output, max_file_bytes=256_000, max_context_bytes=2_000_
         dirs[:] = kept_dirs
         for name in sorted(files):
             path = Path(directory) / name
+            if path.is_symlink():
+                stats["symlink"] += 1
+                continue
             if path.absolute() == output or path.resolve() == output.resolve():
                 stats["output"] += 1
                 continue

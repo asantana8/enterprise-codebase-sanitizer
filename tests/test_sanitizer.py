@@ -67,12 +67,13 @@ class SanitizerTests(unittest.TestCase):
         outside = Path(self.temporary.name) / "outside.txt"
         outside.write_text("outside confidential", encoding="utf-8")
         (self.root / "link.txt").symlink_to(outside)
+        (self.root / "loop.txt").symlink_to("loop.txt")
         (self.root / "linked-dir").symlink_to(outside.parent, target_is_directory=True)
         (self.root / "bad.txt").write_bytes(b"\xff")
         os.mkfifo(self.root / "pipe")
         document, stats = build_context(self.root, self.output)
         self.assertNotIn("outside confidential", document)
-        self.assertEqual(stats["symlink"], 2)
+        self.assertEqual(stats["symlink"], 3)
         self.assertEqual(stats["non_utf8"], 1)
         self.assertEqual(stats["non_regular"], 1)
 
@@ -101,6 +102,8 @@ class SanitizerTests(unittest.TestCase):
         link.symlink_to(self.output)
         with self.assertRaises(ValueError):
             write_context(link, "unsafe", force=True)
+        with self.assertRaises(ValueError):
+            build_context(self.root, link)
         self.assertEqual(self.output.read_text(), "second")
 
     def test_cli_and_output_excluded_on_rerun(self):
