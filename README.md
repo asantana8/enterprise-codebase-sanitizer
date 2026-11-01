@@ -1,5 +1,63 @@
 # Enterprise Codebase Sanitizer & Context Architect (SKILL.md)
 
+[![Comprar no Gumroad](https://img.shields.io/badge/Gumroad-Comprar%20Global%20(%2419.99)-orange?style=for-the-badge&logo=gumroad)](https://asantana3.gumroad.com/l/codebase-sanitizer-ai-notebooklm)
+[![Comprar no Kiwify](https://img.shields.io/badge/Kiwify-Comprar%20no%20Brasil%20(Pix%2FCart%C3%A3o)-green?style=for-the-badge)](https://pay.kiwify.com.br/RrSx0KC)
+
+> **Sanitize repositórios corporativos e transforme código complexo em contextos enxutos e seguros para NotebookLM, Claude Code, Cursor e Agentes de IA.**
+
+---
+
+## 🎯 O Problema
+
+Ao carregar repositórios inteiros em LLMs ou pipelines RAG, os desenvolvedores enfrentam três grandes obstáculos:
+1. **Estouro de Tokens e Custos Altos:** Arquivos de build, lockfiles, minificados e pastas profundas desperdiçam até 80% da janela de contexto.
+2. **Vazamento de Dados e Segredos:** Exposição acidental de arquivos `.env`, chaves de API, credenciais e configurações privadas para modelos externos de IA.
+3. **Alucinações de Contexto:** Os agentes de IA perdem a precisão arquitetural quando são inundados por ruído técnico em vez da regra de negócio central.
+
+---
+
+## 💡 A Solução
+
+O **Enterprise Codebase Sanitizer** é uma ferramenta determinística em Python aliada a uma metodologia corporativa de orquestração de agentes (`SKILL.md` + `AGENTS.md`).
+
+Ele analisa, higieniza e consolida estruturas complexas de código-fonte em um payload de contexto único, seguro e otimizado para modelos de IA.
+
+---
+
+## ✨ Principais Funcionalidades
+
+* 🔐 **Remoção Automatizada de Segredos:** Remove chaves de API, strings de conexão, credenciais e parâmetros sensíveis antes do envio à IA.
+* 🧹 **Otimização Agressiva de Tokens:** Elimina ruídos binários, diretórios de dependências (`node_modules`, `target`, `.git`), artefatos de build e lockfiles.
+* 🧠 **Alinhamento Arquitetural:** Incorpora camadas padronizadas de instruções `AGENTS.md` e `SKILL.md` para que as ferramentas de IA (Claude Code, GitHub Copilot, Cursor) sigam as diretrizes do projeto.
+* ⚡ **Pronto para NotebookLM e RAG:** Formata a saída consolidada em um arquivo único estruturado, ideal para upload no Google NotebookLM e indexação vetorial.
+
+---
+
+## 📦 O que está incluído no pacote?
+
+Ao adquirir a ferramenta via Gumroad ou Kiwify, você recebe o pacote completo de distribuição (`enterprise-codebase-sanitizer.zip`):
+
+1. **`consolidador_lm.py`** – Motor principal de higienização e consolidação de código.
+2. **`setup_agents.py`** – Script de inicialização da governança de prompts e contextos.
+3. **`SKILL.md`** – Guia metodológico completo para orquestração de código com IA.
+4. **`AGENTS.md` Template** – Framework testado para engenharia de prompts em fluxos de trabalho com agentes.
+5. **Guia de Execução (PDF)** – Documentação passo a passo para configuração e uso.
+
+---
+
+## 🚀 Como Executar (Visualização Rápida)
+
+```bash
+# Clone este repositório
+git clone [https://github.com/SEU_USUARIO/enterprise-codebase-sanitizer.git](https://github.com/SEU_USUARIO/enterprise-codebase-sanitizer.git)
+cd enterprise-codebase-sanitizer
+
+# Execute o higienizador no diretório do seu projeto (requer o pacote completo)
+python consolidador_lm.py --path /caminho/para/seu/projeto --output contexto_consolidado.txt
+
+---
+# Enterprise Codebase Sanitizer & Context Architect (SKILL.md)
+
 [![Buy on Gumroad](https://img.shields.io/badge/Gumroad-Buy%20Global%20(%2419.99)-orange?style=for-the-badge&logo=gumroad)](https://asantana3.gumroad.com/l/codebase-sanitizer-ai-notebooklm)
 [![Comprar no Kiwify](https://img.shields.io/badge/Kiwify-Comprar%20no%20Brasil%20(R%2497)-green?style=for-the-badge)](https://pay.kiwify.com.br/RrSx0KC)
 
