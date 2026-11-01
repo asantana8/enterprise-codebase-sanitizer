@@ -1,7 +1,7 @@
 # Enterprise Codebase Sanitizer & Context Architect (SKILL.md)
 
 [![Buy on Gumroad](https://img.shields.io/badge/Gumroad-Buy%20Global%20(%2419.99)-orange?style=for-the-badge&logo=gumroad)](https://asantana3.gumroad.com/l/codebase-sanitizer-ai-notebooklm)
-[![Comprar no Kiwify](https://img.shields.io/badge/Kiwify-Comprar%20no%20Brasil%20(R%2497)-green?style=for-the-badge)](SEU_LINK_DO_KIWIFY_AQUI)
+[![Comprar no Kiwify](https://img.shields.io/badge/Kiwify-Comprar%20no%20Brasil%20(R%2497)-green?style=for-the-badge)]([SEU_LINK_DO_KIWIFY_AQUI](https://pay.kiwify.com.br/RrSx0KC))
 
 > **Sanitize enterprise codebases into lean, highly context-aware inputs for NotebookLM, Claude Code, Cursor, and IDE AI Agents.**
 
